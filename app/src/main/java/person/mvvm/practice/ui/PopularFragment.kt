@@ -1,12 +1,10 @@
 package person.mvvm.practice.ui
 
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_popular.*
-import person.mvvm.practice.ActivityHelper
-import person.mvvm.practice.MainActivity
-import person.mvvm.practice.PopularViewModel
-import person.mvvm.practice.R
+import person.mvvm.practice.*
 import person.mvvm.practice.bus.Bus
 import person.mvvm.practice.bus.USER_COLLECT_UPDATED
 import person.mvvm.practice.loadmore.LoadMoreStatus
@@ -36,10 +34,7 @@ class PopularFragment : BaseVmFragment<PopularViewModel>() {
             }, recyclerView)
             setOnItemClickListener { _, _, position ->
                 val article = mAdapter.data[position]
-                ActivityHelper.start(
-                    MainActivity::class.java,
-                    mapOf(MainActivity.PARAM_ARTICLE to article)
-                )
+                Toast.makeText(App.instance, "未实现",Toast.LENGTH_SHORT).show()
             }
             setOnItemChildClickListener { _, view, position ->
                 val article = mAdapter.data[position]
