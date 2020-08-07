@@ -3,6 +3,7 @@ package person.mvvm.practice.api
 import person.mvvm.practice.bean.Article
 import person.mvvm.practice.bean.Pagination
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 
@@ -20,5 +21,11 @@ interface ApiService {
 
     @GET("/article/list/{page}/json")
     suspend fun getArticleList(@Path("page") page: Int): ApiResult<Pagination<Article>>
+
+    @POST("lg/collect/{id}/json")
+    suspend fun collect(@Path("id") id: Int) : ApiResult<Any?>
+
+    @POST("lg/uncollect_originId/{id}/json")
+    suspend fun unCollect(@Path("id") id: Int): ApiResult<Any?>
 
 }
