@@ -4,6 +4,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_popular.*
+import kotlinx.android.synthetic.main.include_reload.*
 import person.mvvm.practice.*
 import person.mvvm.practice.bus.Bus
 import person.mvvm.practice.bus.USER_COLLECT_UPDATED
@@ -47,6 +48,10 @@ class PopularFragment : BaseVmFragment<PopularViewModel>() {
                     }
                 }
             }
+        }
+
+        btnReload.setOnClickListener {
+            mViewModel.refreshArticleList()
         }
 
     }
