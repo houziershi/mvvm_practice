@@ -1,6 +1,6 @@
 package Objects.Constructors
 
-open class Primary(initialName : String, age : Int = 30) {
+open class Primary(initialName: String, age: Int = 30) {
     var firstName = initialName
     val age = age
 
@@ -15,14 +15,15 @@ open class Primary(initialName : String, age : Int = 30) {
     }
 }
 
-class InitOrder(initOne : String = "hgk", initTwo: Int = 20 ) {
-    var initOneParameter = initOne
-    var initTwoParameter = initTwo
-
+//@JvmOverloads constructor
+class InitOrder(var initOneParameter: String = "hgk", var initTwoParameter: Int = 20) {
+    constructor(a: String) : this(a, 20)
+    constructor(b: Int) : this("hgc", b)
 
     init {
         initOneParameter += "hgc"
     }
+
     init {
         initTwoParameter += 10
     }
@@ -32,28 +33,10 @@ class InitOrder(initOne : String = "hgk", initTwo: Int = 20 ) {
     }
 }
 
-fun main(args : Array<String>) {
-//    var p = Primary("John Adams", 56)
-//    p.sayName()
-//
-//    var n = Primary("Bon Jovi")
-//    n.sayName()
-//
-//    var my=MyPrimary("guokun", 21)
-//    my.myInfo()
-//    var myInfo = InitOrder()
-//    myInfo.sayInfo()
+fun main(args: Array<String>) {
+    var p = Primary("John Adams", 56)
+    p.sayName()
 
-}
-
-class MyPrimary(address:String, height: Int = 170, initialName : String, age : Int = 30):Primary(initialName, age)  {
-
-
-    constructor(address:String, height: Int = 170, initialName : String, age : Int = 30, discription: String):this(address, height, initialName, age) {
-
-    }
-
-    fun myInfo() {
-
-    }
+    var n = Primary("Bon Jovi")
+    n.sayName()
 }
