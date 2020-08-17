@@ -1,2 +1,3 @@
+include ':my_kotlin'
 include ':app'
 rootProject.name = "mvvm_practice"
