@@ -3,7 +3,6 @@ package person.mvvm.practice.ui
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
-import androidx.lifecycle.Transformations
 import kotlinx.android.synthetic.main.fragment_popular.*
 import kotlinx.android.synthetic.main.include_reload.*
 import person.mvvm.practice.*
