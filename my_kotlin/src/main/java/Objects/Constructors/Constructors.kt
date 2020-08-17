@@ -17,14 +17,18 @@ open class Primary(initialName: String, age: Int = 30) {
 
 //@JvmOverloads constructor
 class InitOrder(var initOneParameter: String = "hgk", var initTwoParameter: Int = 20) {
-    constructor(a: String) : this(a, 20)
+    constructor(a: String) : this(a, 20){
+        println("second constructor")
+    }
     constructor(b: Int) : this("hgc", b)
 
     init {
+        println("init one")
         initOneParameter += "hgc"
     }
 
     init {
+        println("init two")
         initTwoParameter += 10
     }
 
@@ -39,4 +43,7 @@ fun main(args: Array<String>) {
 
     var n = Primary("Bon Jovi")
     n.sayName()
+
+    val initOrder = InitOrder("来了")
+    initOrder.sayInfo()
 }

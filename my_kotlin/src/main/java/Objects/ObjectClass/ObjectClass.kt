@@ -18,8 +18,6 @@ class StaticDemoThree {
     }
 }
 
-
-
 fun main(args: Array<String>) {
 
     val espana = Matador("Emilio")

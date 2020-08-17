@@ -2,7 +2,7 @@ package Objects.DataClass
 
 /* This sample demonstrates various features that you get from using a data class */
 
-public data class Superhero(val firstName : String, val lastName : String)
+data class Superhero(val firstName : String, val lastName : String)
 data class User(var userName:String, var userNo:Int)
 
 fun main(args : Array<String>) {
